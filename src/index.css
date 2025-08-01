@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    /* Primary Red Theme */
+    --primary: 0 73% 34%;  /* #a11d1d */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 0 73% 45%;
+    --primary-dark: 0 60% 25%;
+
+    /* Gold/Yellow Accent */
+    --secondary: 45 85% 57%;  /* #f2c02f */
+    --secondary-foreground: 0 0% 10%;
+    --secondary-glow: 45 85% 67%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 45 85% 57%;  /* Gold accent */
+    --accent-foreground: 0 0% 10%;
+
+    /* Dark Brown for footer */
+    --footer: 15 30% 22%;  /* #3c1f1f */
+    --footer-foreground: 0 0% 95%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: 0 73% 34%;
+
+    --radius: 0.75rem;
+
+    /* Custom Design Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 50%, hsl(var(--footer)) 100%);
+    
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--secondary) / 0.4);
+    --shadow-card: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 15 30% 22%;  /* Dark brown background */
+    --foreground: 0 0% 95%;
+
+    --card: 15 25% 18%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 15 25% 18%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 73% 45%;  /* Brighter red for dark mode */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 85% 67%;  /* Brighter gold for dark mode */
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 15 20% 25%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 45 85% 67%;
+    --accent-foreground: 0 0% 10%;
+
+    --footer: 15 35% 15%;
+    --footer-foreground: 0 0% 95%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 15 20% 30%;
+    --input: 15 20% 25%;
+    --ring: 0 73% 45%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+    font-feature-settings: 'kern' 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight;
+  }
+
+  .gradient-text {
+    background: var(--gradient-secondary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-padding {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+}
